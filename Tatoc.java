@@ -49,11 +49,6 @@ public class Tatoc {
 		WebElement target = driver.findElement(By.id("dropbox"));
 
 		(new Actions(driver)).dragAndDrop(element, target).perform();
-		/*if(element.getLocation()==target.getLocation())
-		{
-			driver.findElement(By.linkText("Proceed")).click();
-		}
-		else*/
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -63,11 +58,6 @@ public class Tatoc {
 			driver.findElement(By.linkText("Proceed")).click();
 			
 			
-			/*driver.findElement(By.linkText("Launch Popup Window")).click();
-			//String handle = driver.getWindowHandle().toArray()[1].toString();
-			//driver.toString().window(handle);
-			driver.findElement(By.id("name")).sendKeys("happy");
-			driver.findElement(By.id("submit")).click();*/
 			
 			
 			driver.findElement(By.linkText("Launch Popup Window")).click();
@@ -95,11 +85,11 @@ public class Tatoc {
 			
 			
 			driver.findElement(By.linkText("Generate Token")).click();
-			String token=driver.findElement(By.id("token")).getText();
-			String[] arr=token.split(": ");
-			Cookie cookie=new Cookie("Token",arr[1]);
-			driver.manage().addCookie(cookie);
-			driver.findElement(By.linkText("Proceed")).click();
+		        String Cookie_val = driver.findElement(By.id("token")).getText();
+		        String Cookie = Cookie_val.substring(7);
+		        Cookie cookie = new Cookie("Token", Cookie);
+		        driver.manage().addCookie(cookie);
+		        driver.findElement(By.linkText("Proceed")).click();
 
 	}
 
