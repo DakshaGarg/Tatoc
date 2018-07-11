@@ -71,7 +71,7 @@ public class Tatoc {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	            driver.findElement(By.cssSelector("input#name")).sendKeys("Anurag");
+	            driver.findElement(By.cssSelector("input#name")).sendKeys("Daksha");
 	            try {
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
